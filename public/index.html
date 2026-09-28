@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriScan - Nutrition Label Scanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>NutriScan</h1>
+        <nav>
+            <button id="scan-btn">Scan Label</button>
+            <button id="meal-planner-btn">Meal Planner</button>
+            <button id="track-btn">Track</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Scan Section -->
+        <section id="scan-section" class="active">
+            <h2>Scan Nutrition Label</h2>
+            <div id="upload-area">
+                <p>Take a photo or upload an image of the nutrition facts table</p>
+                <input type="file" id="image-input" accept="image/*">
+                <button id="capture-btn">Capture Photo</button>
+            </div>
+            <div id="preview-container">
+                <img id="preview-image" src="" alt="Preview">
+            </div>
+            <div id="ocr-results">
+                <h3>Extracted Nutrition Data</h3>
+                <table id="nutrition-table">
+                    <thead>
+                        <tr>
+                            <th>Nutrient</th>
+                            <th>Per 100g</th>
+                            <th>Per Serving</th>
+                        </tr>
+                    </thead>
+                    <tbody id="nutrition-tbody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+                <button id="save-product-btn">Save Product</button>
+            </div>
+        </section>
+
+        <!-- Meal Planner Section -->
+        <section id="meal-planner-section">
+            <h2>Meal Planner</h2>
+            <div id="add-meal-item">
+                <select id="product-select">
+                    <option value="">Select a product</option>
+                </select>
+                <input type="number" id="grams-input" placeholder="Grams" min="0">
+                <button id="add-item-btn">Add to Meal</button>
+            </div>
+            <div id="meal-items">
+                <h3>Current Meal</h3>
+                <table id="meal-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Grams</th>
+                            <th>Calories</th>
+                            <th>Protein</th>
+                            <th>Fat</th>
+                            <th>Carbs</th>
+                        </tr>
+                    </thead>
+                    <tbody id="meal-tbody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+                <div id="meal-totals">
+                    <h3>Total</h3>
+                    <p>Calories: <span id="total-calories">0</span> kcal</p>
+                    <p>Protein: <span id="total-protein">0</span> g</p>
+                    <p>Fat: <span id="total-fat">0</span> g</p>
+                    <p>Carbs: <span id="total-carbs">0</span> g</p>
+                </div>
+                <button id="save-meal-btn">Save Meal</button>
+            </div>
+        </section>
+
+        <!-- Track Section -->
+        <section id="track-section">
+            <h2>Track Nutrition</h2>
+            <div id="daily-log">
+                <h3>Today's Log</h3>
+                <table id="log-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Meal</th>
+                            <th>Calories</th>
+                            <th>Protein</th>
+                            <th>Fat</th>
+                            <th>Carbs</th>
+                        </tr>
+                    </thead>
+                    <tbody id="log-tbody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+                <div id="daily-totals">
+                    <h3>Daily Totals</h3>
+                    <p>Calories: <span id="daily-calories">0</span> kcal</p>
+                    <p>Protein: <span id="daily-protein">0</span> g</p>
+                    <p>Fat: <span id="daily-fat">0</span> g</p>
+                    <p>Carbs: <span id="daily-carbs">0</span> g</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
