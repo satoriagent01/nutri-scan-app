@@ -1,0 +1,21 @@
+{
+  "name": "nutri-scan-app",
+  "version": "1.0.0",
+  "description": "Free nutrition label scanner and meal planner",
+  "main": "public/app.js",
+  "scripts": {
+    "test": "node tests/app.test.js",
+    "start": "npx http-server public -p 3000"
+  },
+  "keywords": [
+    "nutrition",
+    "scanner",
+    "meal-planner",
+    "health"
+  ],
+  "author": "NutriScan Team",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
